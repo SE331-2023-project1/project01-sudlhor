@@ -1,11 +1,108 @@
 {
-    "student": [
-
+    "students":[
+        {
+            "id": 1,
+            "name": "Watcharit",
+            "surname":"Maneeyot",
+            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student1.jpg",
+            "course_list": [
+                { "course_id": 1, "course_name": "Discrete Math for fix F"},
+                { "course_id": 2, "course_name": "Psychology of Love"}, 
+                { "course_id": 3, "course_name": "English for Speaking with Thai people"}
+            ],
+            "teacher_id":1,
+            "comment":[]
+        },
+        {
+            "id": 2,
+            "name": "Supanat",
+            "surname":"Srichai",
+            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student2.jpg",
+            "course_list": [
+                { "course_id": 1, "course_name": "Discrete Math for fix F"},
+                { "course_id": 2, "course_name": "Psychology of Love"}, 
+                { "course_id": 3, "course_name": "English for Speaking with Thai people"}
+            ],
+            "teacher_id":1,
+            "comment":[]
+        },
+        {
+            "id": 3,
+            "name": "Kittipat",
+            "surname":"Maneeruk",
+            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student3.jpg",
+            "course_list": [
+                { "course_id": 1, "course_name": "Discrete Math for fix F"},
+                { "course_id": 2, "course_name": "Psychology of Love"}, 
+                { "course_id": 3, "course_name": "English for Speaking with Thai people"}
+            ],
+            "teacher_id":2,
+            "comment":[]
+        },
+        {
+            "id": 4,
+            "name": "Nichakamol",
+            "surname":"Sangsom",
+            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student4.jpg",
+            "course_list": [
+                { "course_id": 1, "course_name": "Discrete Math for fix F"},
+                { "course_id": 2, "course_name": "Psychology of Love"}, 
+                { "course_id": 3, "course_name": "English for Speaking with Thai people"}
+            ],
+            "teacher_id":2,
+            "comment":[]
+        },
+        {
+            "id": 5,
+            "name": "Yada",
+            "surname":"Lakornthaichong3",
+            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student5.jpg",
+            "course_list": [
+                { "course_id": 1, "course_name": "Discrete Math for fix F"},
+                { "course_id": 2, "course_name": "Psychology of Love"}, 
+                { "course_id": 3, "course_name": "English for Speaking with Thai people"}
+            ],
+            "teacher_id":3,
+            "comment":[]
+        },
+        {
+            "id": 6,
+            "name": "Krit",
+            "surname":"Tiprod",
+            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student6.jpg",
+            "course_list": [
+                { "course_id": 1, "course_name": "Discrete Math for fix F"},
+                { "course_id": 2, "course_name": "Psychology of Love"}, 
+                { "course_id": 3, "course_name": "English for Speaking with Thai people"}
+            ],
+            "teacher_id":3,
+            "comment":[]
+        }
     ],
     "teacher":[
-
-
-
-
+        {
+            "id":1,
+            "teacher_name":"Rangsiman Rome",
+            "teacher_surname":"Baipru",
+            "taacher_img":"https://cdn.discordapp.com/attachments/850725114702069790/1114207350870524005/download20230502221258.png"
+        },
+        {
+            "id":2,
+            "teacher_name":"pita limjaroenrat",
+            "teacher_surname":"Ptha",
+            "taacher_img":"https://cdn.discordapp.com/attachments/850725114702069790/1114207350870524005/download20230502221258.png"
+        },
+        {
+            "id":3,
+            "teacher_name":"prayut chan-o-cha",
+            "teacher_surname":"ITu",
+            "taacher_img":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thaipbs.or.th%2Fnews%2Fcontent%2F326944&psig=AOvVaw0vzQoKnD1neT_QVCeKiocL&ust=1691945607603000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIDtodrK14ADFQAAAAAdAAAAABAK"
+        },
+        {
+            "id":4,
+            "teacher_name":"Kantima kittiwathana",
+            "teacher_surname":"Woody",
+            "taacher_img":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fthemomentum.co%2Fthe-list-meme%2F&psig=AOvVaw2OI51MF8KTi9UAzNlIm48Q&ust=1691945896473000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMD84OPL14ADFQAAAAAdAAAAABAE"
+        }
 ]
 }
