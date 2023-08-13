@@ -35,6 +35,14 @@
           </RouterLink>
         </div>
         
+        <!-- Student form -->
+        <form @submit.prevent="addStudent">
+          <input v-model="newStudentName" placeholder="Student Name" />
+          <input v-model="newStudentSurname" placeholder="Student Surname" />
+          <input v-model="newStudentImage" placeholder="Student Image URL" />
+          <input v-model="newStudentTeacher" type="number" placeholder="Teacher ID" />
+          <button type="submit" :disabled="!isFormValid">Add Student</button>
+        </form>
       </main>
     </div><br>
     <h1 style="text-align: left ;">Add Student Here :  </h1>
@@ -68,6 +76,7 @@ const totalStudent = ref<number>(0)
 const newStudentName = ref('');
 const newStudentSurname = ref('');
 const newStudentImage = ref('');
+const newStudentTeacher = ref(0);
 const props = defineProps({
   page: {
     type: Number,
@@ -88,6 +97,7 @@ const addStudent = () => {
       name: newStudentName.value,
       surname: newStudentSurname.value,
       image: newStudentImage.value,
+      teacher_id : newStudentTeacher.value
     };
 
     studentStore_all.pushNewStudent(newStudent);
@@ -95,7 +105,8 @@ const addStudent = () => {
     newStudentName.value = '';
     newStudentSurname.value = '';
     newStudentImage.value = '';
-  }
+    newStudentTeacher.value = 0
+    }
 }
 
 const router = useRouter()

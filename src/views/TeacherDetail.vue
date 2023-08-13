@@ -3,15 +3,34 @@ import { ref } from 'vue'
 import type { Ref } from 'vue'
 import type { TeacherInfo } from '@/teacher'
 import Teacherservice from '@/services/Teacherservice';
-const teacher = ref<TeacherInfo| null> (null)
+
+import { useTeacherAllStore } from "@/stores/all_teacher";
+import { storeToRefs } from "pinia";
 const props = defineProps({
     id: String
 })
-Teacherservice.getTeacherByID(Number(props.id)).then((response) => {
-    teacher.value = response.data
-}).catch(error => {
-        console.log(error)
-    })
+
+const teacherStoreAll = useTeacherAllStore();
+const { teacher_all} = storeToRefs(
+  teacherStoreAll
+);
+  
+console.log(teacher_all.value)
+const keep_id = props.id
+const teacher = teacher_all.value[keep_id-1]
+console.log(teacher)
+
+
+// const teacher = ref<TeacherInfo| null> (null)
+
+
+// Teacherservice.getTeacherByID(Number(props.id)).then((response) => {
+//     teacher.value = response.data
+// }).catch(error => {
+//         console.log(error)
+//     })
+
+
 
 </script>
 <template>

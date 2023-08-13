@@ -1,23 +1,24 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import type{PropType} from 'vue'
-import type { Ref } from 'vue'
+import type { PropType } from 'vue'
 import type { TeacherInfo } from '@/teacher'
-import { type studentInfo } from '@/student'
-import Teacherservice from '@/services/Teacherservice';
-const props =defineProps({
+import type { studentInfo } from '@/student'
+import { useTeacherAllStore } from "@/stores/all_teacher";
+import { storeToRefs } from "pinia";
+
+const props = defineProps({
     student: {
         type: Object as PropType<studentInfo>,
-            require: true
+        required: true
     }
 })
 
-const teacher = ref<TeacherInfo| null> (null)
-Teacherservice.getTeacherByID(Number(props.student.teacher_id)).then((response) => {
-    teacher.value = response.data
-}).catch(error => {
-        console.log(error)
-    })
+const teacherStoreAll = useTeacherAllStore();
+const { teacher_all } = storeToRefs(teacherStoreAll);
+
+const teacher = ref<TeacherInfo | null>(null);
+const teacherId = props.student.teacher_id;
+teacher.value = teacher_all.value.find(teacher => teacher.id === teacherId);
 
 </script>
 <template>

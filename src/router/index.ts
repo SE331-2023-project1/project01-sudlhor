@@ -13,6 +13,10 @@ import { storeToRefs } from 'pinia'
 import { commentStudent } from '@/stores/comment'
 import { commentStudentId } from '@/stores/comment_id'
 
+
+import { useStudentAllStore } from '@/stores/all_student'
+
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -49,30 +53,50 @@ const router = createRouter({
       beforeEnter: (to) => {
         const id: number = parseInt(to.params.id as string)
         const StudentStore = useStudentStore()
-        return StudentService.getStudentById(id)
-          .then((response) => {
-            // need to set up the data for the component
-            StudentStore.setStudent(response.data)
-            const keep_comm = ref([])
-            const commentStudents = commentStudent()
-            const commentStudent_Id = commentStudentId()
-            const { comment } = storeToRefs(commentStudents)
-            keep_comm.value = comment.value.filter(
-              (commentItem) => id === commentItem.id
-            );
-            console.log('Filtered comments:', keep_comm.value)
-            commentStudent_Id.setComment(keep_comm.value)
-          })
-          .catch((error) => {
-            if (error.response && error.response.status === 404) {
-              return {
-                name: '404-resource',
-                params: { resource: 'event' }
-              }
-            } else {
-              return { name: 'network-error' }
-            }
-          })
+        // return StudentService.getStudentById(id)
+        //   .then((response) => {
+        //     // need to set up the data for the component
+        //     const studentStore_all = useStudentAllStore();
+        //     const { student_all} = storeToRefs(studentStore_all);
+        //     console.log(student_all.value)
+        //     const keep = student_all.value[id]
+        //     console.log(keep)
+        //     StudentStore.setStudent(keep)
+        //     const keep_comm = ref([])
+        //     const commentStudents = commentStudent()
+        //     const commentStudent_Id = commentStudentId()
+        //     const { comment } = storeToRefs(commentStudents)
+        //     keep_comm.value = comment.value.filter(
+        //       (commentItem) => id === commentItem.id
+        //     );
+        //     console.log('Filtered comments:', keep_comm.value)
+        //     commentStudent_Id.setComment(keep_comm.value)
+        //   })
+        //   .catch((error) => {
+        //     if (error.response && error.response.status === 404) {
+        //       return {
+        //         name: '404-resource',
+        //         params: { resource: 'event' }
+        //       }
+        //     } else {
+        //       return { name: 'network-error' }
+        //     }
+        //   })
+        const studentStore_all = useStudentAllStore();
+        const { student_all} = storeToRefs(studentStore_all);
+        console.log(student_all.value)
+        const keep = student_all.value[id-1]
+        console.log(keep)
+        StudentStore.setStudent(keep)
+        const keep_comm = ref([])
+        const commentStudents = commentStudent()
+        const commentStudent_Id = commentStudentId()
+        const { comment } = storeToRefs(commentStudents)
+        keep_comm.value = comment.value.filter(
+          (commentItem) => id === commentItem.id
+        );
+        console.log('Filtered comments:', keep_comm.value)
+        commentStudent_Id.setComment(keep_comm.value)
       },
       children: [
         {

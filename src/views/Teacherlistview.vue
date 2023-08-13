@@ -30,7 +30,7 @@ const teacherStoreAll = useTeacherAllStore();
 const { teacher_all} = storeToRefs(
   teacherStoreAll
 );
-
+  
 const newTeacherName = ref("");
 const newTeacherSurname = ref("");
 const newTeacherImage = ref("");
