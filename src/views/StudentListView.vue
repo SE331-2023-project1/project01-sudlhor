@@ -34,7 +34,7 @@
             Next Page
           </RouterLink>
         </div>
-        
+        <h1 style="text-align: left ;">Add Student Here :  </h1>
         <!-- Student form -->
         <form @submit.prevent="addStudent">
           <input v-model="newStudentName" placeholder="Student Name" />
@@ -45,15 +45,7 @@
         </form>
       </main>
     </div><br>
-    <h1 style="text-align: left ;">Add Student Here :  </h1>
-    <div class="form-d">
-      <form @submit.prevent="addStudent" class="form-container">
-            <input v-model="newStudentName" placeholder="Student Name" />
-            <input v-model="newStudentSurname" placeholder="Student Surname" />
-            <input v-model="newStudentImage" placeholder="Student Image URL" />
-            <button type="submit" :disabled="!isFormValid">Add Student</button>
-          </form>
-        </div>
+    
   </div>
 </template>
 
