@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 import 'animate.css';
 
 import Teachercard from './components/TeacherCard.vue'
@@ -18,6 +17,20 @@ import Teachercard from './components/TeacherCard.vue'
         <RouterLink to="/teacherlist">TeacherList</RouterLink>
       </nav>
     </div>
+    <img alt="Vue logo" class="logo" src="https://www.pngmart.com/files/13/Abstract-Graphic-Design-PNG-Transparent.png" width="300" height="250" />
+
+    <div class="wrapper">
+      <HelloWorld msg="SoodLor School" />
+
+    <nav class="nav-container animate__animated animate__bounceInLeft">
+      <div class="nav-links">
+        <RouterLink to="/" >Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+      </div>
+      
+    </nav>
+  </div>
+
   </header>
 
   <RouterView />
@@ -68,7 +81,7 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: white;
 }
 
 nav a.router-link-exact-active:hover {
