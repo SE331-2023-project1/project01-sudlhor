@@ -18,6 +18,8 @@
           v-if="page != 1"
           id="page-prev"
           class="text-left mr-auto"
+          style="color: aliceblue; font-size: 20px;" 
+          
         >
           Prev Page
         </RouterLink>
@@ -26,7 +28,9 @@
           rel="next"
           v-if="hasNextPage"
           id="page-next"
-          class="text-right ml-auto"
+          class="text-right ml-auto " 
+          style="color: aliceblue; font-size: 20px;" 
+
         >
           Next Page
         </RouterLink>
@@ -84,15 +88,18 @@ const hasNextPage = computed(() => {
 <style scoped>
 h1 {
   text-align: center;
+  color: aliceblue;
 }
-
+.pagination a.RouterLink {
+  color: #ffffff;
+}
 .student-card-container {
   display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping to maintain same row */
+  flex-wrap: nowrap; 
   justify-content: center;
-  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  overflow-x: auto;
   gap: 1rem;
-  margin-bottom: 1rem; /* Add some spacing between the cards and pagination */
+  margin-bottom: 1rem; 
 }
 
 .student-card {

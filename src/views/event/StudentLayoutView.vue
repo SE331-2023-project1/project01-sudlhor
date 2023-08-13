@@ -35,3 +35,13 @@ StudentService.getStudentById(Number(props.id)).then((response) => {
         <router-view :student="student"></router-view>
     </div>
 </template>
+<style scoped>
+div a.router-link-exact-active {
+  color: white;
+}
+
+div a.router-link-exact-active:hover {
+  background-color: transparent;
+}
+
+</style>

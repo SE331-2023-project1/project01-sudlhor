@@ -14,7 +14,7 @@
 
    <template>
     <RouterLink class="student-link" :to="{name: 'student-detail', params:{id: student?.id}}">
-        <div class=" animate__animated animate__bounceInLeft student-class">
+        <div class=" animate__animated animate__fadeInLeft student-class">
       <div class="student-card ">
         <h2>Name: {{ props.student?.name }}</h2>
         <h2>Surname: {{ props.student?.surname }}</h2> 
@@ -29,17 +29,20 @@
       padding: 20px;
       width: 250px;
       cursor: pointer;
-      border: 5px solid #504545;
+      border: 5px solid #ffffff;
       margin-bottom: 18px;
       margin-top: 18px;
       border-radius: 15px;
 
     }
-    /* .student-card:hover {
+    h2{
+        color: aliceblue;
+    }
+    .student-card:hover {
       transform: scale(1.01);
       box-shadow: 0 3px 12px 0 rgba(86, 18, 18, 0.2);
     }
-     */
+    
     .student-link{
       color: #2c3e50;
       text-decoration: none;
@@ -50,6 +53,7 @@
     height: 150px;
     align-items: center;
     margin-top: 10%;
+    border-radius: 10px;
         
 }
 
