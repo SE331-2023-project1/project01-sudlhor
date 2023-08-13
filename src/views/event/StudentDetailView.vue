@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import type { Ref } from 'vue'
 import { type studentInfo } from '@/student'
 import type{PropType} from 'vue'
-
 defineProps({
     student: {
         type: Object as PropType<studentInfo>,
@@ -16,7 +14,7 @@ defineProps({
         <h2>Name : {{ student.name }}  {{ student.surname }}</h2>
         <h2>StudentID : {{ student.id }} </h2>
         <h2>Courses : </h2>
-        <h3 v-for="course in student.course_list" :key="course.id"> - {{ course.course_name }}</h3><br>
+        <h3 v-for="course in student.course_list" :key="course.course_id"> - {{ course.course_name }}</h3><br>
         <img :src="student.image">
     </div>
 </template>

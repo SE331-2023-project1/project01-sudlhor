@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import StudentListView from '../views/StudentListView.vue'
 import StudentDetailView from '../views/event/StudentDetailView.vue'
 import StudentLayoutView from '../views/event/StudentLayoutView.vue'
-import StudentService from '@/services/StudentInfoServices'
 import StudentCommentView from '@/views/event/StudentCommentView.vue'
 import StudentAdvisorView from '@/views/event/StudentAdvisorView.vue'
 import { useStudentStore } from '@/stores/student'
@@ -53,35 +52,6 @@ const router = createRouter({
       beforeEnter: (to) => {
         const id: number = parseInt(to.params.id as string)
         const StudentStore = useStudentStore()
-        // return StudentService.getStudentById(id)
-        //   .then((response) => {
-        //     // need to set up the data for the component
-        //     const studentStore_all = useStudentAllStore();
-        //     const { student_all} = storeToRefs(studentStore_all);
-        //     console.log(student_all.value)
-        //     const keep = student_all.value[id]
-        //     console.log(keep)
-        //     StudentStore.setStudent(keep)
-        //     const keep_comm = ref([])
-        //     const commentStudents = commentStudent()
-        //     const commentStudent_Id = commentStudentId()
-        //     const { comment } = storeToRefs(commentStudents)
-        //     keep_comm.value = comment.value.filter(
-        //       (commentItem) => id === commentItem.id
-        //     );
-        //     console.log('Filtered comments:', keep_comm.value)
-        //     commentStudent_Id.setComment(keep_comm.value)
-        //   })
-        //   .catch((error) => {
-        //     if (error.response && error.response.status === 404) {
-        //       return {
-        //         name: '404-resource',
-        //         params: { resource: 'event' }
-        //       }
-        //     } else {
-        //       return { name: 'network-error' }
-        //     }
-        //   })
         const studentStore_all = useStudentAllStore();
         const { student_all} = storeToRefs(studentStore_all);
         console.log(student_all.value)

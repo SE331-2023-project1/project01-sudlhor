@@ -4,7 +4,7 @@ export const commentStudentId = defineStore('comment_id', {
         comment_id: []
     }),
     actions: {
-        setComment(comment){
+        setComment(comment: never[]){
             this.comment_id=comment
         }
     }

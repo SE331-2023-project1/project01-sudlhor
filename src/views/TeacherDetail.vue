@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { Ref } from 'vue'
-import type { TeacherInfo } from '@/teacher'
-import Teacherservice from '@/services/Teacherservice';
-
 import { useTeacherAllStore } from "@/stores/all_teacher";
 import { storeToRefs } from "pinia";
 const props = defineProps({
@@ -20,15 +15,6 @@ const keep_id = props.id
 const teacher = teacher_all.value[keep_id-1]
 console.log(teacher)
 
-
-// const teacher = ref<TeacherInfo| null> (null)
-
-
-// Teacherservice.getTeacherByID(Number(props.id)).then((response) => {
-//     teacher.value = response.data
-// }).catch(error => {
-//         console.log(error)
-//     })
 
 
 

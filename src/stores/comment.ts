@@ -2,10 +2,10 @@ import { defineStore } from 'pinia'
 import type { commmentInfo } from '@/comment'
 export const commentStudent = defineStore('comment', {
     state: () => ({
-        comment: []
+        comment: [] as commmentInfo[]
     }),
     actions: {
-        pushComment(comment){
+        pushComment(comment: { id: number; comment: string }){
             this.comment.push(comment)
         }
     }

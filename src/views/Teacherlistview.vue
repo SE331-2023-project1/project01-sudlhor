@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="student">
     <div class="student-card-container">
@@ -20,9 +21,8 @@
 
 <script lang="ts" setup>
 import TeacherCard from "@/components/TeacherCard.vue";
-import type { TeacherInfo } from "@/teacher";
-import TeacherServices from "@/services/Teacherservice";
-import { ref, computed, onMounted } from "vue";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { ref, computed } from "vue";
 import { useTeacherAllStore } from "@/stores/all_teacher";
 import { storeToRefs } from "pinia";
 
@@ -57,20 +57,7 @@ const addTeacher = () => {
   }
 };
 
-const teachers = ref([]);
 
-// Fetch teachers and populate the store on component mount
-// onMounted(async () => {
-//   try {
-//     const response = await TeacherServices.getTeacher();
-//     teacherStoreAll.setTeacherArray(response.data);
-//     console.log(teacher_all.value);
-//     teachers.value = teacher_all.value
-//     console.log(teachers.value)
-//   } catch (error) {
-//     console.error(error);
-//   }
-// });
 </script>
 
 <style>
