@@ -90,25 +90,50 @@
             "id":1,
             "teacher_name":"Rangsiman",
             "teacher_surname":"Rom",
-            "taacher_img":"https://www.globe.co.th/wp-content/uploads/2021/03/rangsimanrometuachang.jpg"
-        },
+            "taacher_img":"https://www.globe.co.th/wp-content/uploads/2021/03/rangsimanrometuachang.jpg",
+            "teacher_age":"age:34   ",
+            "teacher_gender": "Gender:Male",
+            "teacher_graduated":"Graduated with a bachelor's degree ",
+            "teacher_position":"Position: Professor",
+            "teacher_email": "Rom@cmu.ac.th",
+            "teacher_phone": "065-8542-5416"
+
+             },
         {
             "id":2,
             "teacher_name":"pita",
             "teacher_surname":"limjaroenrat",
-            "taacher_img":"https://images.prestigeonline.com/content/uploads/2018/10/09070039/Pita-%E2%80%9CTim%E2%80%9D-Limjaroenrat.jpg"
+            "taacher_img":"https://images.prestigeonline.com/content/uploads/2018/10/09070039/Pita-%E2%80%9CTim%E2%80%9D-Limjaroenrat.jpg",
+            "teacher_age":"age:32   ",
+            "teacher_gender": "Gender:Male",
+            "teacher_graduated":"Graduated with a Ph.D.",
+            "teacher_position":"Position: Professor",
+            "teacher_email": "Pita@cmu.ac.th",
+            "teacher_phone": "081-8462-9845"
         },
         {
             "id":3,
             "teacher_name":"Wathano",
             "teacher_surname":"Surikit",
-            "taacher_img":"https://static.amarintv.com/images/upload/editor/source/2022NOTE/06JUNE/030622/10/776601.jpg"
+            "taacher_img":"https://static.amarintv.com/images/upload/editor/source/2022NOTE/06JUNE/030622/10/776601.jpg",
+            "teacher_age":"age:48   ",
+            "teacher_gender": "Gender:Male",
+            "teacher_graduated":"Graduated with a master's degree",
+            "teacher_position":"Position: Associate Professor",
+            "teacher_email": "Wathano@cmu.ac.th",
+            "teacher_phone": "084-5461-5842"
         },
         {
             "id":4,
-            "teacher_name":"Kantima kittiwathana",
-            "teacher_surname":"Woody",
-            "taacher_img":"https://themomentum.co/wp-content/uploads/2020/08/Vampire%E2%80%99s-Kiss.jpg"
+            "teacher_name":"Kantima",
+            "teacher_surname":"kittiwathana",
+            "taacher_img":"https://themomentum.co/wp-content/uploads/2020/08/Vampire%E2%80%99s-Kiss.jpg",
+            "teacher_age":"age:40   ",
+            "teacher_gender": "Gender:Male",
+            "teacher_graduated":"Graduated with a master's degree",
+            "teacher_position":"Position: Associate Professor",
+            "teacher_email": "Kantima@cmu.ac.th",
+            "teacher_phone": "091-1642-4252"
         }
 ]
 }

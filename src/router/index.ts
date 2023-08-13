@@ -8,6 +8,11 @@ import StudentAdvisorView from '@/views/event/StudentAdvisorView.vue'
 import { useStudentStore } from '@/stores/student'
 
 
+
+import HomeView from '../views/HomeView.vue'
+import Teacherlistview from '@/views/Teacherlistview.vue'
+import TeacherDetail from '@/views/TeacherDetail.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -26,6 +31,18 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
+      path: '/teacherlist',
+      name: 'teacher',
+      component: Teacherlistview
+    },
+    {
+      path: '/teacher/:id',
+      name: 'teacher-detail',
+      component: TeacherDetail,
+      props:true
+    },
+    {
+
       path: '/student/:id',
       name: 'student-layout',
       component: StudentLayoutView, 
@@ -69,7 +86,9 @@ const router = createRouter({
           props: true
         }
       ]
-    }
+    }, 
+    
+
   ]
 })
 

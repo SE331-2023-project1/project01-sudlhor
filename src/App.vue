@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import 'animate.css';
 
+import Teachercard from './components/TeacherCard.vue'
 </script>
 
 <template>
@@ -13,6 +14,16 @@ import 'animate.css';
         <RouterLink to="/about">About</RouterLink>
       </div>
     </nav>
+    
+
+    <div class="wrapper">
+  
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/teacherlist">TeacherList</RouterLink>
+      </nav>
+    </div>
   </header>
 
   <RouterView />
@@ -46,7 +57,10 @@ body{
 }
 header {
   line-height: 1.5;
-  max-height: 100vh;
+  max-height: 1vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 nav {
@@ -55,6 +69,8 @@ nav {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 nav a.router-link-exact-active {
@@ -76,6 +92,8 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1920px) {
+
+
   header {
     display: flex;
     place-items: center;
@@ -93,12 +111,14 @@ nav a:first-of-type {
   }
 
   nav {
-    text-align: left;
+    text-align: center;
     margin-left: -1rem;
     font-size: 1rem;
 
     padding: 1rem 0;
     margin-top: 1rem;
+    display: flex;
+  justify-content: center;
   }
 }
 
