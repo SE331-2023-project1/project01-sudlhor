@@ -146,9 +146,8 @@ h1 {
 }
 
 .student-card {
-  flex: 0 0 auto; /* Prevent cards from stretching */
+  flex: 0 0 auto;
   min-width: 300px;
-  /* ... your existing card styles ... */
 }
 
 .lnw {
@@ -156,9 +155,9 @@ h1 {
 }
 .pagination {
   display: flex;
-  justify-content: center; /* Center the pagination links horizontally */
-  align-items: center; /* Center the pagination links vertically */
-  width: 100%; /* Adjust as needed */
+  justify-content: center;
+  align-items: center; 
+  width: 100%; 
   margin-top: 20px;
 }
 
@@ -166,7 +165,7 @@ h1 {
   flex: 1;
   text-decoration: none;
   color: #2c3e50;
-  text-align: center; /* Center the text inside each link */
+  text-align: center; 
 }
 
 #page-prev {
