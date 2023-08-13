@@ -4,7 +4,7 @@
             "id": 1,
             "name": "Watcharit",
             "surname":"Maneeyot",
-            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student1.jpg",
+            "image":"https://i.pinimg.com/564x/85/5a/a8/855aa8c79605d40429b686b0e379d75e.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
                 { "course_id": 2, "course_name": "Psychology of Love"}, 
@@ -18,7 +18,7 @@
             "id": 2,
             "name": "Supanat",
             "surname":"Srichai",
-            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student2.jpg",
+            "image":"https://i.pinimg.com/564x/2b/79/cb/2b79cb7ff917f422af46cdadbdfe55fd.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
                 { "course_id": 2, "course_name": "Psychology of Love"}, 
@@ -32,7 +32,7 @@
             "id": 3,
             "name": "Kittipat",
             "surname":"Maneeruk",
-            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student3.jpg",
+            "image":"https://i.pinimg.com/564x/0f/36/41/0f3641218daabb1b1ff3d95acdd7a126.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
                 { "course_id": 2, "course_name": "Psychology of Love"}, 
@@ -46,7 +46,7 @@
             "id": 4,
             "name": "Nichakamol",
             "surname":"Sangsom",
-            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student4.jpg",
+            "image":"https://i.pinimg.com/564x/f6/27/25/f627253c26155d49e42ad27a26fdd9b7.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
                 { "course_id": 2, "course_name": "Psychology of Love"}, 
@@ -59,8 +59,8 @@
         {
             "id": 5,
             "name": "Yada",
-            "surname":"Lakornthaichong3",
-            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student5.jpg",
+            "surname":"Lakorn",
+            "image":"https://i.pinimg.com/564x/f2/55/1b/f2551bac38645c1e7a54b40afc281ffa.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
                 { "course_id": 2, "course_name": "Psychology of Love"}, 
@@ -74,7 +74,7 @@
             "id": 6,
             "name": "Krit",
             "surname":"Tiprod",
-            "image":"C:/Users/Acer/Desktop/WOK/Compo/ProjectSudlhor/src/assets/Image/Student6.jpg",
+            "image":"https://i.pinimg.com/564x/19/49/b8/1949b805a8b2f288528f977286367d9f.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
                 { "course_id": 2, "course_name": "Psychology of Love"}, 
