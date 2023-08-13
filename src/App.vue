@@ -33,20 +33,14 @@ onMounted(async () => {
 
 <template>
   <header>
-    
-
-    <div class="wrapper">
       <HelloWorld msg="SoodLor School" />
-
-      <nav class="nav-container animate__animated animate__bounceInLeft">
+      <nav class="fixed-nav animate__animated animate__bounceInLeft">
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/teacherlist">TeacherList</RouterLink>
       </nav>
-    </div>
-
+  
   </header>
-
+<br><br><br>
   <RouterView />
 </template>
 
@@ -57,14 +51,21 @@ onMounted(async () => {
 body{
   background-color: black;
 }
-.nav-container {
-  display: flex;
-  justify-content: flex-start;
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  font-size: 16px;
+  background-color: transparent; /* Adjust the background color as needed */
+  padding: 10px 0; /* Add some padding to the navigation */
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.fixed-nav router-link {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
 }
 
 .nav-links {
@@ -92,10 +93,16 @@ nav {
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
+  
 }
+nav a.router-link{
+  font-size: 18px;
 
+}
 nav a.router-link-exact-active {
   color: white;
+  font-size: 18px;
+
 }
 
 nav a.router-link-exact-active:hover {

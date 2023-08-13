@@ -8,7 +8,7 @@
         class="student-card"
       ></TeacherCard>
     </div>
-    <!-- Teacher form -->
+    <h1 style="text-align: center ; color: aliceblue;">Add Teacher Here :  </h1>
     <form @submit.prevent="addTeacher">
       <input v-model="newTeacherName" placeholder="Teacher Name" />
       <input v-model="newTeacherSurname" placeholder="Teacher Surname" />
@@ -83,7 +83,7 @@ const teachers = ref([]);
   flex-wrap: nowrap;
   overflow-x: auto;
   margin-bottom: 1rem;
-  gap:5px ;
+  gap: 5px;
 }
 
 .student-card {
@@ -111,7 +111,23 @@ const teachers = ref([]);
   text-align: right;
 }
 
-img{
+img {
   border-radius: 15px;
+}
+input{
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+button {
+  background-color: #4679d1;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 10px;
 }
 </style>

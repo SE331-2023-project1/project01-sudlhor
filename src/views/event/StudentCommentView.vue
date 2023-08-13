@@ -110,7 +110,6 @@ button {
   border-radius: 10px;
 }
 </style>
-In this code, I've added the width property to the .comment-box class to set the desired width of the comment boxes. You can adjust the value of width to match your design requirements. This will ensure that all comment boxes have a consistent and fixed width.
 
 
 

@@ -33,7 +33,7 @@
       margin-bottom: 18px;
       margin-top: 18px;
       border-radius: 15px;
-
+      margin-right:60px;
     }
     h2{
         color: aliceblue;

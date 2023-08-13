@@ -36,6 +36,7 @@ StudentService.getStudentById(Number(props.id)).then((response) => {
     </div>
 </template>
 <style scoped>
+
 div a.router-link-exact-active {
   color: white;
 }

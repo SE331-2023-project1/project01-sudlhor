@@ -2,6 +2,7 @@
   <div>
     <div class="lnw">
       <h1 class="animate__animated animate__bounceInLeft">STUDENT LIST</h1>
+      <br>
       <main class="flex flex-col items-center">
         <div class="student-card-container">
           <StudentCard
@@ -33,15 +34,18 @@
             Next Page
           </RouterLink>
         </div>
-        <!-- Student form -->
-        <form @submit.prevent="addStudent">
-          <input v-model="newStudentName" placeholder="Student Name" />
-          <input v-model="newStudentSurname" placeholder="Student Surname" />
-          <input v-model="newStudentImage" placeholder="Student Image URL" />
-          <button type="submit" :disabled="!isFormValid">Add Student</button>
-        </form>
+        
       </main>
-    </div>
+    </div><br>
+    <h1 style="text-align: left ;">Add Student Here :  </h1>
+    <div class="form-d">
+      <form @submit.prevent="addStudent" class="form-container">
+            <input v-model="newStudentName" placeholder="Student Name" />
+            <input v-model="newStudentSurname" placeholder="Student Surname" />
+            <input v-model="newStudentImage" placeholder="Student Image URL" />
+            <button type="submit" :disabled="!isFormValid">Add Student</button>
+          </form>
+        </div>
   </div>
 </template>
 
@@ -129,6 +133,7 @@ onBeforeRouteLeave((to, from, next) => {
 </script>
 
 <style scoped>
+
 h1 {
   text-align: center;
   color: aliceblue;
@@ -143,6 +148,7 @@ h1 {
   overflow-x: auto;
   gap: 1rem;
   margin-bottom: 1rem; 
+  margin-left:90px ;
 }
 
 .student-card {
@@ -178,4 +184,55 @@ h1 {
 .background{
   background-color: black;
 }
+
+input{
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+button {
+  background-color: #4679d1;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 10px;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 820px) {
+  .lnw {
+    text-align: center; /* Center the title when the screen is smaller */
+  }
+
+  .student-card-container {
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+
+  }
+
+  .form-d {
+    position: relative; /* Reset position */
+  }
+  input{
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+button {
+  background-color: #4679d1;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 10px;
+}
+  
+}
+
 </style>
