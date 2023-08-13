@@ -8,17 +8,11 @@ import Teachercard from './components/TeacherCard.vue'
 
 <template>
   <header>
-    <nav class="nav-container animate__animated animate__bounceInLeft">
-      <div class="nav-links">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </div>
-    </nav>
     
 
     <div class="wrapper">
   
-      <nav>
+      <nav class="nav-container animate__animated animate__bounceInLeft">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/teacherlist">TeacherList</RouterLink>

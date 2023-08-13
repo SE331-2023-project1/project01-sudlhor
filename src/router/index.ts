@@ -6,12 +6,12 @@ import StudentService from '@/services/StudentInfoServices'
 import StudentCommentView from '@/views/event/StudentCommentView.vue'
 import StudentAdvisorView from '@/views/event/StudentAdvisorView.vue'
 import { useStudentStore } from '@/stores/student'
-
-
-
-import HomeView from '../views/HomeView.vue'
+import { ref } from 'vue'
 import Teacherlistview from '@/views/Teacherlistview.vue'
 import TeacherDetail from '@/views/TeacherDetail.vue'
+import { storeToRefs } from 'pinia'
+import { commentStudent } from '@/stores/comment'
+import { commentStudentId } from '@/stores/comment_id'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,7 +20,7 @@ const router = createRouter({
       path: '/',
       name: 'StudentListView',
       component: StudentListView,
-      props: (route) => ({page: parseInt(route.query?.page as string || '1' )})
+      props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
     },
     {
       path: '/about',
@@ -39,56 +39,62 @@ const router = createRouter({
       path: '/teacher/:id',
       name: 'teacher-detail',
       component: TeacherDetail,
-      props:true
+      props: true
     },
     {
-
       path: '/student/:id',
       name: 'student-layout',
-      component: StudentLayoutView, 
+      component: StudentLayoutView,
       props: true,
-        beforeEnter: (to) => {
-          const id: number = parseInt(to.params.id as string)
-          const StudentStore = useStudentStore()
-          return StudentService.getStudentById(id)
+      beforeEnter: (to) => {
+        const id: number = parseInt(to.params.id as string)
+        const StudentStore = useStudentStore()
+        return StudentService.getStudentById(id)
           .then((response) => {
             // need to set up the data for the component
             StudentStore.setStudent(response.data)
+            const keep_comm = ref([])
+            const commentStudents = commentStudent()
+            const commentStudent_Id = commentStudentId()
+            const { comment } = storeToRefs(commentStudents)
+            keep_comm.value = comment.value.filter(
+              (commentItem) => id === commentItem.id
+            );
+            console.log('Filtered comments:', keep_comm.value)
+            commentStudent_Id.setComment(keep_comm.value)
           })
           .catch((error) => {
-            if (error.response && error.response.status === 404){
-              return{
+            if (error.response && error.response.status === 404) {
+              return {
                 name: '404-resource',
-                params: { resource: 'event'}
+                params: { resource: 'event' }
               }
-            }else{
-              return { name: 'network-error'}
+            } else {
+              return { name: 'network-error' }
             }
           })
-        },
-      children:[
+      },
+      children: [
         {
-          path:'',
+          path: '',
           name: 'student-detail',
           component: StudentDetailView,
           props: true
         },
         {
-          path:'',
+          path: '',
           name: 'student-comment',
           component: StudentCommentView,
           props: true
         },
         {
-          path:'',
+          path: '',
           name: 'student-advisor',
           component: StudentAdvisorView,
           props: true
         }
       ]
-    }, 
-    
-
+    }
   ]
 })
 
