@@ -16,24 +16,42 @@ Teacherservice.getTeacherByID(Number(props.id)).then((response) => {
 </script>
 <template>
     <br><br><br>
-    <div v-if="teacher">
-        <img :src="teacher.taacher_img" class="image" />
-        <br>
-        <h1> {{ teacher?.teacher_name }} {{ teacher?.teacher_surname }} </h1>
-        <h3>{{ teacher?.teacher_gender }} {{ teacher?.teacher_age }} </h3>
-        <h3>{{ teacher?.teacher_graduated }}</h3>
-        <h3>{{ teacher?.teacher_position }}</h3>
-        <h3>{{ teacher?.teacher_email }}</h3>
-        <h3>{{ teacher?.teacher_phone }}</h3>
+    <div class="teacher-info" v-if="teacher">
+        <div class="teacher-image">
+            <img :src="teacher.taacher_img" class="image" />
+        </div>
+        <div class="teacher-details">
+            <h1> {{ teacher?.teacher_name }} {{ teacher?.teacher_surname }} </h1>
+            <h3>{{ teacher?.teacher_gender }} {{ teacher?.teacher_age }} </h3>
+            <h3>{{ teacher?.teacher_graduated }}</h3>
+            <h3>{{ teacher?.teacher_position }}</h3>
+            <h3>{{ teacher?.teacher_email }}</h3>
+            <h3>{{ teacher?.teacher_phone }}</h3>
+        </div>
     </div>
 </template>
 <style scoped>
-.image{
-    width: 200px;
-    height: 150px;
-    align-items: center;
-    text-align: center;
-  border-radius: 500px;
+.teacher-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-</style>    
+.teacher-image {
+  margin-right: 20px;
+}
+
+.image {
+    width: 200px;
+    height: 150px;
+    border-radius: 500px;
+}
+
+.teacher-details {
+  text-align: left;
+}
+
+h1,h3{
+    color: aliceblue;
+}
+</style>

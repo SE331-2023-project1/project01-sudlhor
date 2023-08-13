@@ -10,26 +10,14 @@ import Teachercard from './components/TeacherCard.vue'
     
 
     <div class="wrapper">
-  
+      <HelloWorld msg="SoodLor School" />
+
       <nav class="nav-container animate__animated animate__bounceInLeft">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/teacherlist">TeacherList</RouterLink>
       </nav>
     </div>
-    <img alt="Vue logo" class="logo" src="https://www.pngmart.com/files/13/Abstract-Graphic-Design-PNG-Transparent.png" width="300" height="250" />
-
-    <div class="wrapper">
-      <HelloWorld msg="SoodLor School" />
-
-    <nav class="nav-container animate__animated animate__bounceInLeft">
-      <div class="nav-links">
-        <RouterLink to="/" >Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </div>
-      
-    </nav>
-  </div>
 
   </header>
 

@@ -1,10 +1,14 @@
-<template> 
+<template>
   <div class="student">
-    <TeacherCard
-      v-for="teacher in teachers"
-      :key="teacher.id"
-      :teacher="teacher"  
-    ></TeacherCard>
+    <div class="student-card-container">
+      <TeacherCard
+        v-for="teacher in teachers"
+        :key="teacher.id"
+        :teacher="teacher"
+        class="student-card"
+      ></TeacherCard>
+    </div>
+    
   </div>
 </template>
 <script lang="ts" setup>
@@ -21,28 +25,46 @@ const teachers: Ref<Array<TeacherInfo>> = ref([]);
 });
 
 </script>
+
 <style>
 .student {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
+
+.student-card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  gap:5px ;
+}
+
+.student-card {
+  flex: 0 0 auto;
+  min-width: 300px;
+  margin-right: 1rem;
+}
+
 .pagination {
   display: flex;
   width: 290px;
 }
+
 .pagination a {
   flex: 1;
   text-decoration: none;
   color: #2c3e50;
 }
-.h1{
-  border-left: 10px;
-}
+
 #page-prev {
   text-align: left;
 }
+
 #page-next {
   text-align: right;
+}
+
+img{
+  border-radius: 15px;
 }
 </style>

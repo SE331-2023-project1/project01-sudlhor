@@ -4,6 +4,7 @@
     <h1 class="animate__animated animate__bounceInLeft">STUDENT LIST</h1>
     <main class="flex flex-col items-center">
       <div class="student-card-container">
+        
         <StudentCard
           v-for="student in students"
           :key="student.id"
