@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-
+import Teacherlistview from '@/views/Teacherlistview.vue'
+import TeacherDetail from '@/views/TeacherDetail.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -16,7 +17,18 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
-    }
+    },
+    {
+      path: '/teacherlist',
+      name: 'teacher',
+      component: Teacherlistview
+    },
+    {
+      path: '/teacher/:id',
+      name: 'teacher-detail',
+      component: TeacherDetail,
+      props:true
+    },
   ]
 })
 
