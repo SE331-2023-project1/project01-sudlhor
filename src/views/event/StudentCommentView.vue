@@ -1,11 +1,14 @@
 <template>
-    <div>
-      <div v-for="(commentItem, index) in keepCommt_id" :key="index">
-        <p>{{ commentItem.comment }}</p>
+    
+    <div class="comment-view">
+      <div class="comments">
+        <div v-for="(commentItem, index) in keepCommt_id" :key="index" class="comment-box">
+          <p>{{ commentItem.comment }}</p>
+        </div>
       </div>
-      <div>
+      <div class="comment-form">
         <form @submit.prevent="addComment">
-          <label for="name">Comment:</label>
+          <label for="name" style="color: white; margin-left: 10px;">Comment : </label>
           <input v-model="comment_input" type="text" id="name" required>
           <button type="submit" class="submit-btn">Add Comment</button>
         </form>
@@ -65,4 +68,51 @@
     comment_input.value = '';
   };
   </script>
-  
+
+<style scoped>
+input{
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.comment-view {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.comments {
+  text-align: center;
+}
+
+.comment-box {
+  width: 200px; /* Set the desired width */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.comment-form {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 10px;
+}
+</style>
+In this code, I've added the width property to the .comment-box class to set the desired width of the comment boxes. You can adjust the value of width to match your design requirements. This will ensure that all comment boxes have a consistent and fixed width.
+
+
+
+
+

@@ -21,7 +21,7 @@ Teacherservice.getTeacherByID(Number(props.student.teacher_id)).then((response) 
 
 </script>
 <template>
-    <br><br><br>
+    <br>
     <div v-if="teacher">
         <img :src="teacher.taacher_img" class="image" />
         <br>
@@ -40,5 +40,8 @@ Teacherservice.getTeacherByID(Number(props.student.teacher_id)).then((response) 
     align-items: center;
     text-align: center;
   border-radius: 500px;
+}
+h1,h3{
+    color: aliceblue;
 }
 </style>
