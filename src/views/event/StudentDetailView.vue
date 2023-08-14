@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { type studentInfo } from '@/student'
 import type{PropType} from 'vue'
-defineProps({
+const props = defineProps({
     student: {
         type: Object as PropType<studentInfo>,
             require: true
@@ -9,13 +9,13 @@ defineProps({
 })
 </script>
 <template>
-    <div v-if="student">
+    <div v-if="props.student">
         <h1>PROFILE</h1>
-        <h2>Name : {{ student.name }}  {{ student.surname }}</h2>
-        <h2>StudentID : {{ student.id }} </h2>
+        <h2>Name : {{ props.student?.name }}  {{ props.student?.surname }}</h2>
+        <h2>StudentID : {{ props.student?.id }} </h2>
         <h2>Courses : </h2>
-        <h3 v-for="course in student.course_list" :key="course.course_id"> - {{ course.course_name }}</h3><br>
-        <img :src="student.image">
+        <h3 v-for="course in props.student?.course_list" :key="course.course_id"> - {{ course.course_name }}</h3><br>
+        <img :src="props.student?.image">
     </div>
 </template>
 

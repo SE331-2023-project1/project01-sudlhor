@@ -5,7 +5,7 @@ export const commentStudent = defineStore('comment', {
         comment: [] as commmentInfo[]
     }),
     actions: {
-        pushComment(comment: { id: number; comment: string }){
+        pushComment(comment: commmentInfo){
             this.comment.push(comment)
         }
     }

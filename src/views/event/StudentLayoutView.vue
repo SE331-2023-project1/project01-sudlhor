@@ -17,7 +17,7 @@ const studentStore_all = useStudentAllStore()
 const { student_all } = storeToRefs(studentStore_all)
 const { student } = storeToRefs(StudentStore)
 console.log(student_all.value)
-const keep_id = props.id
+const keep_id = Number(props.id)
 const keep = student_all.value[keep_id-1]
 console.log(keep)
 StudentStore.setStudent(keep)

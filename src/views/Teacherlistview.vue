@@ -13,7 +13,7 @@
     <form @submit.prevent="addTeacher">
       <input v-model="newTeacherName" placeholder="Teacher Name" />
       <input v-model="newTeacherSurname" placeholder="Teacher Surname" />
-      <input v-model="newTeacherImage" placeholder="Teacher Image URL" />
+      <input v-model="newTaacherImage" placeholder="Teacher Image URL" />
       <button type="submit" :disabled="!isFormValid">Add Teacher</button>
     </form>
   </div>
@@ -33,13 +33,13 @@ const { teacher_all} = storeToRefs(
   
 const newTeacherName = ref("");
 const newTeacherSurname = ref("");
-const newTeacherImage = ref("");
+const newTaacherImage = ref("");
 
 const isFormValid = computed(
   () =>
     newTeacherName.value.trim() !== "" &&
     newTeacherSurname.value.trim() !== "" &&
-    newTeacherImage.value.trim() !== ""
+    newTaacherImage.value.trim() !== ""
 );
 
 const addTeacher = () => {
@@ -48,15 +48,20 @@ const addTeacher = () => {
       id: teacher_all.value.length + 1,
       teacher_name: newTeacherName.value,
       teacher_surname: newTeacherSurname.value,
-      taacher_img: newTeacherImage.value,
+      taacher_img: newTaacherImage.value,
+      teacher_age: '',
+      teacher_gender: '',
+      teacher_position: '',
+      teacher_graduated: '',
+      teacher_email: '',
+      teacher_phone: ''
     };
     teacherStoreAll.pushNewTeacher(newTeacher);
     newTeacherName.value = "";
     newTeacherSurname.value = "";
-    newTeacherImage.value = "";
+    newTaacherImage.value = "";
   }
 };
-
 
 </script>
 

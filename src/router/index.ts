@@ -14,6 +14,7 @@ import { commentStudentId } from '@/stores/comment_id'
 
 
 import { useStudentAllStore } from '@/stores/all_student'
+import type { commmentInfo } from '@/comment'
 
 
 const router = createRouter({
@@ -58,15 +59,13 @@ const router = createRouter({
         const keep = student_all.value[id-1]
         console.log(keep)
         StudentStore.setStudent(keep)
-        const keep_comm = ref([])
+        const keep_comm = ref<commmentInfo[]>([]);
         const commentStudents = commentStudent()
         const commentStudent_Id = commentStudentId()
         const { comment } = storeToRefs(commentStudents)
-        keep_comm.value = comment.value.filter(
-          (commentItem) => id === commentItem.id
-        );
+        keep_comm.value = comment.value.filter((commentItem) => id === commentItem.id);
         console.log('Filtered comments:', keep_comm.value)
-        commentStudent_Id.setComment(keep_comm.value)
+        commentStudent_Id.setComment(keep_comm.value);
       },
       children: [
         {

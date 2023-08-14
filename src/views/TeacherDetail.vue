@@ -11,7 +11,7 @@ const { teacher_all} = storeToRefs(
 );
   
 console.log(teacher_all.value)
-const keep_id = props.id
+const keep_id = Number(props.id)
 const teacher = teacher_all.value[keep_id-1]
 console.log(teacher)
 

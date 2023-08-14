@@ -13,13 +13,22 @@ const props = defineProps({
     }
 })
 
+
 const teacherStoreAll = useTeacherAllStore();
 const { teacher_all } = storeToRefs(teacherStoreAll);
 
 const teacher = ref<TeacherInfo | null>(null);
 const teacherId = props.student.teacher_id;
-teacher.value = teacher_all.value.find(teacher => teacher.id === teacherId);
 
+// Find the teacher with the matching id
+const foundTeacher = teacher_all.value.find((teacher) => teacher.id === teacherId);
+
+// Assign the found teacher to the 'teacher' ref, or null if not found
+if (foundTeacher) {
+  teacher.value = foundTeacher;
+} else {
+  teacher.value = null;
+}
 </script>
 <template>
     <br>

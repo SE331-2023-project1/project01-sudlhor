@@ -4,6 +4,7 @@
             "id": 1,
             "name": "Watcharit",
             "surname":"Maneeyot",
+            "student_id" : 642115041,
             "image":"https://i.pinimg.com/564x/85/5a/a8/855aa8c79605d40429b686b0e379d75e.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
@@ -18,6 +19,7 @@
             "id": 2,
             "name": "Supanat",
             "surname":"Srichai",
+            "student_id" : 642185042,
             "image":"https://i.pinimg.com/564x/2b/79/cb/2b79cb7ff917f422af46cdadbdfe55fd.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
@@ -32,6 +34,7 @@
             "id": 3,
             "name": "Kittipat",
             "surname":"Maneeruk",
+            "student_id" : 642115061,
             "image":"https://i.pinimg.com/564x/0f/36/41/0f3641218daabb1b1ff3d95acdd7a126.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
@@ -46,6 +49,7 @@
             "id": 4,
             "name": "Nichakamol",
             "surname":"Sangsom",
+            "student_id" : 642115051,
             "image":"https://i.pinimg.com/564x/f6/27/25/f627253c26155d49e42ad27a26fdd9b7.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
@@ -60,6 +64,7 @@
             "id": 5,
             "name": "Yada",
             "surname":"Lakorn",
+            "student_id" : 642155041,
             "image":"https://i.pinimg.com/564x/f2/55/1b/f2551bac38645c1e7a54b40afc281ffa.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},
@@ -74,6 +79,7 @@
             "id": 6,
             "name": "Krit",
             "surname":"Tiprod",
+            "student_id" : 642715041,
             "image":"https://i.pinimg.com/564x/19/49/b8/1949b805a8b2f288528f977286367d9f.jpg",
             "course_list": [
                 { "course_id": 1, "course_name": "Discrete Math for fix F"},

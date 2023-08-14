@@ -1,12 +1,12 @@
 export interface TeacherInfo{
 id:number,
-teacher_name: String
-teacher_surname: String
-taacher_img: String
-teacher_age:number
-teacher_gender:String
-teacher_position:String
-teacher_graduated:String
-teacher_email:String
-teacher_phone:String
+teacher_name: string
+teacher_surname: string
+taacher_img: string
+teacher_age: string
+teacher_gender: string
+teacher_position: string
+teacher_graduated: string
+teacher_email: string
+teacher_phone: string
 }

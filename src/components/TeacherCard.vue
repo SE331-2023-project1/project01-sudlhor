@@ -10,7 +10,7 @@
             </div>
         </div>
     </RouterLink>
-</template>
+</template>z
 
 <script setup lang="ts">
 import { type TeacherInfo } from '@/teacher';

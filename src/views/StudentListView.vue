@@ -55,14 +55,12 @@ import StudentCard from '../components/StudentCard.vue'
 import type { studentInfo } from '@/student'
 import { ref , computed, type Ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import type { AxiosResponse } from 'axios'
 import { onBeforeRouteLeave } from 'vue-router'
-import StudentService from '@/services/StudentInfoServices'
 import 'animate.css';
 import { useStudentAllStore } from '@/stores/all_student'
 import { storeToRefs } from 'pinia';
 const studentStore_all = useStudentAllStore();
-const { student_all} = storeToRefs(studentStore_all);
+const { student_all } = storeToRefs(studentStore_all);
 const students: Ref<studentInfo[]> = ref([])
 const totalStudent = ref<number>(0)
 const newStudentName = ref('');
@@ -89,7 +87,18 @@ const addStudent = () => {
       name: newStudentName.value,
       surname: newStudentSurname.value,
       image: newStudentImage.value,
-      teacher_id : newStudentTeacher.value
+      teacher_id : newStudentTeacher.value,
+      course_list: [],
+      student_id: student_all.value.length + 1,
+      comment: []
+      
+    // name: string
+    // surname: string
+    // image: string
+    // course_list: Course[]
+    // teacher_id: number
+    // comment: Comment[]
+    // student_id: number
     };
 
     studentStore_all.pushNewStudent(newStudent);
@@ -103,18 +112,6 @@ const addStudent = () => {
 
 const router = useRouter()
 
-// Fetch data and store it in student_all store
-// onMounted(async () => {
-//   try {
-//     const response = await StudentService.getStudent();
-//     studentStore_all.setStudentArray(response.data);
-//     totalStudent.value = response.data.length;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// });
-
-// Use stored data for pagination
 const displayedStudents = computed(() => {
   const startIndex = (props.page - 1) * 3;
   const endIndex = startIndex + 3;
@@ -126,7 +123,6 @@ const hasNextPage = computed(() => {
   return props.page < totalPages;
 });
 
-// Store new students before leaving the page
 onBeforeRouteLeave((to, from, next) => {
   if (isFormValid.value) {
     addStudent();
