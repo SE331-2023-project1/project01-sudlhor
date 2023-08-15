@@ -9,8 +9,8 @@
         class="student-card"
       ></TeacherCard>
     </div>
-    <h1 style="text-align: center ; color: aliceblue;">Add Teacher Here :  </h1>
-    <form @submit.prevent="addTeacher">
+    <h1 style="text-align: left ; color: aliceblue; margin-top: 10px; margin-left: 20px; position: fixed;">Add Teacher Here :  </h1>
+    <form @submit.prevent="addTeacher" style="position: fixed; margin-top: 15px; margin-left: 14%;">
       <input v-model="newTeacherName" placeholder="Teacher Name" />
       <input v-model="newTeacherSurname" placeholder="Teacher Surname" />
       <input v-model="newTaacherImage" placeholder="Teacher Image URL" />
@@ -75,8 +75,8 @@ const addTeacher = () => {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  margin-bottom: 30%;
   gap: 5px;
+  margin-top: 15px;
 }
 
 .student-card {
