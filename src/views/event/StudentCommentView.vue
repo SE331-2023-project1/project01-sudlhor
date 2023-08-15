@@ -1,10 +1,10 @@
 <template>
     <div>
-      <div v-for="(commentItem, index) in keepCommt_id" :key="index" style="background-color: aliceblue; padding: 10px; border-radius: 15px; margin: 15px; text-align: center;">
+      <div v-for="(commentItem, index) in keepCommt_id" :key="index" style="background-color: aliceblue; padding: 10px; border-radius: 15px; margin: 15px; text-align: center;" class="animate__animated animate__rubberBand">
         <p>{{ commentItem.comment }}</p>
       </div>
       <div>
-        <form @submit.prevent="addComment">
+        <form @submit.prevent="addComment" style="margin-top: 10px;">
           <label for="name" style="color: aliceblue; margin-right: 10px;">Comment:</label>
           <input v-model="comment_input" type="text" id="name" required>
           <button type="submit" class="submit-btn">Add Comment</button>
@@ -21,6 +21,8 @@
   import type { commmentInfo } from '@/comment'
   import { type studentInfo } from '@/student';
   import type { PropType } from 'vue';
+  import 'animate.css';
+
   
   const props = defineProps({
     student: {
@@ -91,6 +93,7 @@ input{
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f5f5f5;
+  
 }
 
 
