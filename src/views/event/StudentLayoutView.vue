@@ -32,6 +32,21 @@ StudentStore.setStudent(keep)
     <router-view :student="student"></router-view>
   </div>
 </template>
+
+<style scoped>
+#nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  font-size: large;
+}
+</style>
+
 <style scoped>
 
 div a.router-link-exact-active {

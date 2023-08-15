@@ -17,6 +17,7 @@
       <button type="submit" :disabled="!isFormValid">Add Teacher</button>
     </form>
   </div>
+  
 </template>
 
 <script lang="ts" setup>
@@ -74,7 +75,7 @@ const addTeacher = () => {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 30%;
   gap: 5px;
 }
 
@@ -123,3 +124,4 @@ button {
   border-radius: 10px;
 }
 </style>
+

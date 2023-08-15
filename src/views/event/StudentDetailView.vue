@@ -23,7 +23,7 @@ const props = defineProps({
 img{
     width: 300px;
     height: 200px;
-    align-items: center;
+    align-items: left;
     border-radius: 20px
 
 }   

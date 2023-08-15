@@ -22,34 +22,39 @@ console.log(teacher)
 <template>
     <br><br><br>
     <div class="teacher-info" v-if="teacher">
-        <div class="teacher-image">
+        
+        <div class="teacher-details">
+          <div class="teacher-image">
             <img :src="teacher.taacher_img" class="image" />
         </div>
-        <div class="teacher-details">
             <h1> {{ teacher?.teacher_name }} {{ teacher?.teacher_surname }} </h1>
             <h3>{{ teacher?.teacher_gender }} {{ teacher?.teacher_age }} </h3>
             <h3>{{ teacher?.teacher_graduated }}</h3>
             <h3>{{ teacher?.teacher_position }}</h3>
             <h3>{{ teacher?.teacher_email }}</h3>
             <h3>{{ teacher?.teacher_phone }}</h3>
+            
+            
         </div>
     </div>
 </template>
 <style scoped>
 .teacher-info {
+  margin-left: 50%;
+  margin-bottom: 90%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
 .teacher-image {
-  margin-right: 20px;
+  bottom: 0;
 }
 
 .image {
-    width: 200px;
-    height: 150px;
-    border-radius: 500px;
+    width: 400px;
+    height: 300px;
+
 }
 
 .teacher-details {

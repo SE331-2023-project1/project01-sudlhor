@@ -31,7 +31,6 @@ const props = defineProps({
     width: 250px;
     cursor: pointer;
     border: 5px solid #ffffff;
-    margin-bottom: 18px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;

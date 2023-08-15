@@ -60,6 +60,7 @@ body{
   padding: 10px 0; /* Add some padding to the navigation */
   text-align: center;
   color: white;
+  font-size:35px;
 }
 
 .fixed-nav router-link {
