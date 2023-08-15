@@ -36,7 +36,7 @@
         </div>
         <h1 style="text-align: left ;">Add Student Here :  </h1>
         <!-- Student form -->
-        <form @submit.prevent="addStudent">
+        <form @submit.prevent="addStudent" class="form-s">
           <input v-model="newStudentName" placeholder="Student Name" />
           <input v-model="newStudentSurname" placeholder="Student Surname" />
           <input v-model="newStudentImage" placeholder="Student Image URL" />
@@ -199,6 +199,9 @@ button {
   display: inline-block;
   font-size: 13px;
   border-radius: 10px;
+}
+.form-s{
+  position: fixed;
 }
 
 /* Media query for screens smaller than 768px */
