@@ -5,9 +5,9 @@
       </div>
       <div>
         <form @submit.prevent="addComment" style="margin-top: 10px;">
-          <label for="name" class="text-white mr-2">Comment:</label>
-          <input v-model="comment_input" type="text" id="name" required>
-          <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Add Comment</button>
+          <label for="name" class="text-white ">Comment :</label>
+          <input class="p-2 rounded-10 mr-10" v-model="comment_input" type="text" id="name" required>
+        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Add Comment</button>
         </form>
       </div>
     </div>
@@ -69,51 +69,5 @@
     comment_input.value = '';
   };
   </script>
-
-<style scoped>
-input{
-    padding: 10px;
-    border-radius: 10px;
-    margin-right: 10px;
-}
-.comment-view {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-
-.comments {
-  text-align: center;
-}
-
-.comment-box {
-  width: 200px; /* Set the desired width */
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f5f5f5;
-  
-}
-
-
-.comment-form {
-  margin-top: 20px;
-}
-
-button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 13px;
-  border-radius: 10px;
-}
-</style>
-
-
 
 

@@ -24,7 +24,7 @@ StudentStore.setStudent(keep)
 </script>
 <template>
   <div v-if="student">
-    <div id="nav">
+    <div id="nav" class="fixed bottom-0 left-0 w-full bg-gray-900 text-white py-2 text-center text-lg">
       <router-link :to="{ name: 'student-detail', params: { id } }">Details</router-link> |
       <router-link :to="{ name: 'student-advisor', params: { id } }">Teacher</router-link> |
       <router-link :to="{ name: 'student-comment', params: { id } }">Comment</router-link>
@@ -33,27 +33,3 @@ StudentStore.setStudent(keep)
   </div>
 </template>
 
-<style scoped>
-#nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
-  font-size: large;
-}
-</style>
-
-<style scoped>
-
-div a.router-link-exact-active {
-  color: white;
-}
-
-div a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-</style>

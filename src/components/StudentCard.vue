@@ -14,10 +14,10 @@ const props = defineProps({
 <template>
 <RouterLink class="student-link" :to="{name: 'student-detail', params:{id: student?.id}}">
     <div class="animate__animated animate__fadeInLeft student-class">
-        <div class="student-card">
-            <h2>Name: {{ props.student?.name }}</h2>
-            <h2>Surname: {{ props.student?.surname }}</h2> 
-            <img :src="props.student.image" class="image animate__backInDown" />
+        <div class="p-5 w-250 cursor-pointer border-2 border-white mb-18 mt-18 student-card rounded-lg mr-60 ">
+            <h2 class="text-white 200 text-lg">Name: {{ props.student?.name }}</h2>
+            <h2 class="text-white 200 text-lg">Surname: {{ props.student?.surname }}</h2> 
+            <img :src="props.student.image" class="animate__backInDown w-200 h-150 flex image items-center mt-10p rounded-10" />
         </div>
     </div>
 </RouterLink>
@@ -35,9 +35,7 @@ const props = defineProps({
     margin-right: 60px;
 }
 
-h2 {
-    color: aliceblue;
-}
+
 
 .student-card:hover {
     transform: scale(1.01);
@@ -54,6 +52,6 @@ h2 {
     height: 150px;
     align-items: center;
     margin-top: 10%;
-    border-radius: 10px;
+    border-radius: 10px
 }
 </style>

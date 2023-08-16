@@ -1,10 +1,10 @@
 <template class="background">
   <div>
-    <div class="lnw">
+    <div class="mt-20">
       <h1 class="animate__animated animate__bounceInLeft text-xl text-white	text-center	 ">STUDENT LIST</h1>
       <br>
       <main class="flex flex-col items-center">
-        <div class="student-card-container">
+        <div class="flex flex-nowrap justify-center overflow-x-auto gap-4 mb-4 ml-12">
           <StudentCard
             v-for="student in displayedStudents"
             :key="student.id"
@@ -12,15 +12,13 @@
             class="mb-4"
           ></StudentCard>
         </div>
-        <div class="flex w-290 pagination mt-4">
+        <div class="w-290 flex justify-center items-center w-full mt-3 text-white">
           <RouterLink
             :to="{ name: 'StudentListView', query: { page: page - 1 } }"
             rel="prev"
             v-if="page !== 1"
             id="page-prev"
-            class="text-left mr-auto"
-            style="color: rgb(69, 255, 69); font-size: 30px;" 
-          >
+            class="text-left mr-auto text-3xl"          >
             Prev Page
           </RouterLink>
           <RouterLink
@@ -28,19 +26,18 @@
             rel="next"
             v-if="hasNextPage"
             id="page-next"
-            class="text-right ml-auto " 
-            style="color: rgb(69, 225, 69); font-size: 30px;" 
+            class="text-right ml-auto text-blue text-3xl text-white" 
           >
             Next Page
           </RouterLink>
         </div>
         <!-- Student form -->
-        <form @submit.prevent="addStudent" class="form-s text-green-300">
-          <input v-model="newStudentName" placeholder="Student Name" />
-          <input v-model="newStudentSurname" placeholder="Student Surname" />
-          <input v-model="newStudentImage" placeholder="Student Image URL" />
-          <input v-model="newStudentTeacher" type="number" placeholder="Teacher ID" />
-          <button type="submit" :disabled="!isFormValid">Add Student</button>
+        <form @submit.prevent="addStudent" class="form-s text-black-300">
+          <input class="p-2 rounded-10 " v-model="newStudentName" placeholder="Student Name" />
+          <input class="p-2 rounded-10 " v-model="newStudentSurname" placeholder="Student Surname" />
+          <input class="p-2 rounded-10 " v-model="newStudentImage" placeholder="Student Image URL" />
+          <input class="p-2 rounded-10 mr-5" v-model="newStudentTeacher" type="number" placeholder="Teacher ID" />
+          <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md" :disabled="!isFormValid">Add Student</button>
         </form>
       </main>
     </div><br>
@@ -163,109 +160,3 @@ onBeforeRouteUpdate((to, from, next) => {
   })
 })
 </script>
-
-<style scoped>
-
-
-.pagination a.RouterLink {
-  color: #ffffff;
-}
-.student-card-container {
-  display: flex;
-  flex-wrap: nowrap; 
-  justify-content: center;
-  overflow-x: auto;
-  gap: 1rem;
-  margin-bottom: 1rem; 
-  margin-left:90px ;
-}
-
-.student-card {
-  flex: 0 0 auto;
-  min-width: 300px;
-}
-
-.lnw {
-  margin-top: 20px;
-}
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  width: 100%; 
-  margin-top: 20px;
-}
-
-.pagination a {
-  flex: 1;
-  text-decoration: none;
-  color: #2c3e50;
-  text-align: center; 
-}
-
-#page-prev {
-  text-align: left;
-}
-
-#page-next {
-  text-align: right;
-}
-.background{
-  background-color: black;
-}
-
-input{
-  padding: 10px;
-  border-radius: 10px;
-  margin-right: 10px;
-}
-button {
-  background-color: green;
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 13px;
-  border-radius: 10px;
-}
-
-
-/* Media query for screens smaller than 768px */
-@media (max-width: 820px) {
-  .lnw {
-    text-align: center; /* Center the title when the screen is smaller */
-  }
-
-  .student-card-container {
-    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
-
-  }
-
-  .form-d {
-    position: relative; /* Reset position */
-  }
-  input{
-  padding: 10px;
-  border-radius: 10px;
-  margin-right: 10px;
-}
-button {
-  background-color: #4679d1;
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 13px;
-  border-radius: 10px;
-}
-h2{
-  text-decoration: green;
-}
-  
-}
-
-</style>

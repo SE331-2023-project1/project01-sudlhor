@@ -51,5 +51,6 @@ const props = defineProps({
     width: 200px;
     height: 150px;
     align-items: center;
+    border-radius: 10px;
 }
 </style>

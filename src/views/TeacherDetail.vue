@@ -20,43 +20,19 @@ console.log(teacher)
 
 </script>
 <template>
-    <br><br><br>
-    <div class="teacher-info" v-if="teacher">
-        
+    <div class="mb-90% flex items-center justify-start " v-if="teacher">
         <div class="teacher-details">
           <div class="teacher-image">
-            <img :src="teacher.taacher_img" class="image w-4/5	h-4/5" />
+            <img :src="teacher.taacher_img" class="image w-2/5	h-2/5" />
         </div>
-            <h1> {{ teacher?.teacher_name }} {{ teacher?.teacher_surname }} </h1>
-            <h3>{{ teacher?.teacher_gender }} {{ teacher?.teacher_age }} </h3>
-            <h3>{{ teacher?.teacher_graduated }}</h3>
-            <h3>{{ teacher?.teacher_position }}</h3>
-            <h3>{{ teacher?.teacher_email }}</h3>
-            <h3>{{ teacher?.teacher_phone }}</h3>
+            <h1 class="text-white text-3xl"> {{ teacher?.teacher_name }} {{ teacher?.teacher_surname }} </h1>
+            <h3 class="text-white text-xl">{{ teacher?.teacher_gender }} {{ teacher?.teacher_age }} </h3>
+            <h3 class="text-white text-xl">{{ teacher?.teacher_graduated }}</h3>
+            <h3 class="text-white text-xl">{{ teacher?.teacher_position }}</h3>
+            <h3 class="text-white text-xl">{{ teacher?.teacher_email }}</h3>
+            <h3 class="text-white text-xl">{{ teacher?.teacher_phone }}</h3>
             
             
         </div>
     </div>
 </template>
-<style scoped>
-.teacher-info {
-  margin-left: 50%;
-  margin-bottom: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.teacher-image {
-  bottom: 0;
-}
-
-
-.teacher-details {
-  text-align: left;
-}
-
-h1,h3{
-    color: aliceblue;
-}
-</style>

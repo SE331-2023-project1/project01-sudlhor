@@ -112,16 +112,11 @@ const addTeacher = () => {
   text-align: right;
 }
 
-img {
-  border-radius: 15px;
-}
 input{
   padding: 10px;
   border-radius: 10px;
   margin-left: 50px;
 }
-botton{
-  margin-left: 10%;
-}
+
 </style>
 

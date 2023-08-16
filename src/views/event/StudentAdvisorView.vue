@@ -30,7 +30,7 @@ if (foundTeacher) {
 }
 </script>
 <template>
-  <div v-if="teacher" >
+  <div class="mx-auto" v-if="teacher" >
     <h1 class="text-white text-2xl font-semibold">
       {{ teacher?.teacher_name }} {{ teacher?.teacher_surname }}
     </h1>
@@ -41,16 +41,6 @@ if (foundTeacher) {
     <h3 class="text-gray-300 text-lg">{{ teacher?.teacher_position }}</h3>
     <h3 class="text-gray-300 text-lg">{{ teacher?.teacher_email }}</h3>
     <h3 class="text-gray-300 text-lg">{{ teacher?.teacher_phone }}</h3>
-    <img :src="teacher.taacher_img" class="image" />
+    <img :src="teacher.taacher_img" class="w-3/5 h3/5" />
   </div>
 </template>
-<style scoped>
-.image {
-  width: 300px;
-  height: 225px;
-}
-
-h1{
-  color: aliceblue;
-}
-</style>
