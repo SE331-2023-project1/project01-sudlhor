@@ -5,9 +5,9 @@
       </div>
       <div>
         <form @submit.prevent="addComment" style="margin-top: 10px;">
-          <label for="name" style="color: aliceblue; margin-right: 10px;">Comment:</label>
+          <label for="name" class="text-white mr-2">Comment:</label>
           <input v-model="comment_input" type="text" id="name" required>
-          <button type="submit" class="submit-btn">Add Comment</button>
+          <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Add Comment</button>
         </form>
       </div>
     </div>

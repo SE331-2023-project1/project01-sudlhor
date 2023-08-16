@@ -34,7 +34,6 @@
             Next Page
           </RouterLink>
         </div>
-        <h1 style="text-align: left ;">Add Student Here :  </h1>
         <!-- Student form -->
         <form @submit.prevent="addStudent" class="form-s">
           <input v-model="newStudentName" placeholder="Student Name" />
@@ -236,6 +235,8 @@ button {
 }
 .form-s{
   position: fixed;
+  margin-top: 29%;
+
 }
 
 /* Media query for screens smaller than 768px */
