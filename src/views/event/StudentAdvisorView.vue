@@ -30,7 +30,7 @@ if (foundTeacher) {
 }
 </script>
 <template>
-  <div v-if="teacher" class="bg-gray-800 p-4 rounded">
+  <div v-if="teacher" >
     <h1 class="text-white text-2xl font-semibold">
       {{ teacher?.teacher_name }} {{ teacher?.teacher_surname }}
     </h1>
@@ -50,7 +50,7 @@ if (foundTeacher) {
   height: 225px;
 }
 
-h1, h3 {
+h1{
   color: aliceblue;
 }
 </style>

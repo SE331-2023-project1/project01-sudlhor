@@ -1,7 +1,7 @@
 <template class="background">
   <div>
     <div class="lnw">
-      <h1 class="animate__animated animate__bounceInLeft">STUDENT LIST</h1>
+      <h1 class="animate__animated animate__bounceInLeft text-xl text-white	text-center	 ">STUDENT LIST</h1>
       <br>
       <main class="flex flex-col items-center">
         <div class="student-card-container">
@@ -19,7 +19,7 @@
             v-if="page !== 1"
             id="page-prev"
             class="text-left mr-auto"
-            style="color: aliceblue; font-size: 20px;" 
+            style="color: rgb(69, 255, 69); font-size: 30px;" 
           >
             Prev Page
           </RouterLink>
@@ -29,13 +29,13 @@
             v-if="hasNextPage"
             id="page-next"
             class="text-right ml-auto " 
-            style="color: aliceblue; font-size: 20px;" 
+            style="color: rgb(69, 225, 69); font-size: 30px;" 
           >
             Next Page
           </RouterLink>
         </div>
         <!-- Student form -->
-        <form @submit.prevent="addStudent" class="form-s">
+        <form @submit.prevent="addStudent" class="form-s text-green-300">
           <input v-model="newStudentName" placeholder="Student Name" />
           <input v-model="newStudentSurname" placeholder="Student Surname" />
           <input v-model="newStudentImage" placeholder="Student Image URL" />
@@ -166,10 +166,7 @@ onBeforeRouteUpdate((to, from, next) => {
 
 <style scoped>
 
-h1 {
-  text-align: center;
-  color: aliceblue;
-}
+
 .pagination a.RouterLink {
   color: #ffffff;
 }
@@ -223,7 +220,7 @@ input{
   margin-right: 10px;
 }
 button {
-  background-color: #4679d1;
+  background-color: green;
   border: none;
   color: white;
   padding: 10px 10px;
@@ -233,11 +230,7 @@ button {
   font-size: 13px;
   border-radius: 10px;
 }
-.form-s{
-  position: fixed;
-  margin-top: 29%;
 
-}
 
 /* Media query for screens smaller than 768px */
 @media (max-width: 820px) {
@@ -268,6 +261,9 @@ button {
   display: inline-block;
   font-size: 13px;
   border-radius: 10px;
+}
+h2{
+  text-decoration: green;
 }
   
 }

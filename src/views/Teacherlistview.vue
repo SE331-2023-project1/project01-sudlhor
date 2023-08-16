@@ -9,12 +9,12 @@
         class="student-card"
       ></TeacherCard>
     </div>
-    <h1 style="text-align: left ; color: aliceblue; margin-top: 10px; margin-left: 20px; position: fixed;">Add Teacher Here :  </h1>
-    <form @submit.prevent="addTeacher" style="position: fixed; margin-top: 15px; margin-left: 14%;">
+    <h1 style="text-align: left ; color: aliceblue; margin-top: 10px; margin-left: 20px; position: fixed;" class="text-xl	">Add Teacher Here :  </h1>
+    <form @submit.prevent="addTeacher" style="position: fixed; margin-top: 50px; margin-left: 0.1%;">
       <input v-model="newTeacherName" placeholder="Teacher Name" />
       <input v-model="newTeacherSurname" placeholder="Teacher Surname" />
       <input v-model="newTaacherImage" placeholder="Teacher Image URL" />
-      <button type="submit" :disabled="!isFormValid">Add Teacher</button>
+      <button type="submit" :disabled="!isFormValid" class="rounded-full bg-green-300	mx-3	p-2">Add Teacher</button>
     </form>
   </div>
   
@@ -120,17 +120,8 @@ input{
   border-radius: 10px;
   margin-left: 50px;
 }
-button {
-  background-color: #4679d1;
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 13px;
-  border-radius: 10px;
-  margin-left: 20px;
+botton{
+  margin-left: 10%;
 }
 </style>
 

@@ -25,7 +25,7 @@ console.log(teacher)
         
         <div class="teacher-details">
           <div class="teacher-image">
-            <img :src="teacher.taacher_img" class="image" />
+            <img :src="teacher.taacher_img" class="image w-4/5	h-4/5" />
         </div>
             <h1> {{ teacher?.teacher_name }} {{ teacher?.teacher_surname }} </h1>
             <h3>{{ teacher?.teacher_gender }} {{ teacher?.teacher_age }} </h3>
@@ -51,11 +51,6 @@ console.log(teacher)
   bottom: 0;
 }
 
-.image {
-    width: 400px;
-    height: 300px;
-
-}
 
 .teacher-details {
   text-align: left;

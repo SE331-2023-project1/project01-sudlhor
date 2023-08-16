@@ -42,7 +42,7 @@ onMounted(async () => {
       <h4> {{ message }} </h4>
     </div>
       <HelloWorld msg="SoodLor School" />
-      <nav class="fixed-nav animate__animated animate__bounceInLeft">
+      <nav class="fixed-nav animate__animated animate__bounceInLeft text-green">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/teacherlist">TeacherList</RouterLink>
       </nav>
@@ -71,11 +71,6 @@ body{
   font-size:35px;
 }
 
-.fixed-nav router-link {
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
-}
 
 .nav-links {
   display: flex;
