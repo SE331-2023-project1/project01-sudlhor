@@ -11,8 +11,7 @@ import TeacherDetail from '@/views/TeacherDetail.vue'
 import { storeToRefs } from 'pinia'
 import { commentStudent } from '@/stores/comment'
 import { commentStudentId } from '@/stores/comment_id'
-
-
+import NProgress from 'nprogress'
 import { useStudentAllStore } from '@/stores/all_student'
 import type { commmentInfo } from '@/comment'
 
@@ -89,6 +88,14 @@ const router = createRouter({
       ]
     }
   ]
+})
+
+router.beforeEach(()=>{
+  NProgress.start()
+})
+
+router.afterEach(()=>{
+  NProgress.done()
 })
 
 export default router

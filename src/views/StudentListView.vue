@@ -60,6 +60,11 @@ import 'animate.css';
 import { useStudentAllStore } from '@/stores/all_student'
 import { storeToRefs } from 'pinia';
 import { useMessageStore} from '@/stores/message'
+import NProgress from 'nprogress'
+import StudentInfoServices from '@/services/StudentInfoServices';
+import type { AxiosResponse } from "axios";
+const router = useRouter()
+
 const store = useMessageStore()
 const studentStore_all = useStudentAllStore();
 const { student_all } = storeToRefs(studentStore_all);
@@ -69,6 +74,7 @@ const newStudentName = ref('');
 const newStudentSurname = ref('');
 const newStudentImage = ref('');
 const newStudentTeacher = ref(0);
+import { onBeforeRouteUpdate } from 'vue-router';
 const props = defineProps({
   page: {
     type: Number,
@@ -116,7 +122,6 @@ const addStudent = () => {
     }
 }
 
-const router = useRouter()
 
 const displayedStudents = computed(() => {
   const startIndex = (props.page - 1) * 3;
@@ -135,6 +140,29 @@ onBeforeRouteLeave((to, from, next) => {
   }
   next();
 });
+
+NProgress
+StudentInfoServices.getStudent().then((response: AxiosResponse<studentInfo[]>) => {
+  students.value = response.data
+  totalStudent.value = response.headers['x-total-count']
+}).catch(() => {
+  router.push({ name: 'NetworkError' });
+// }).finally(() => {
+//   NProgress.done()
+})
+onBeforeRouteUpdate((to, from, next) => {
+  const toPage = Number(to.query.page)
+  // NProgress.start()
+  StudentInfoServices.getStudent().then((response: AxiosResponse<studentInfo[]>) => {
+    students.value = response.data
+    totalStudent.value = response.headers['x-total-count']
+  next()
+  }).catch(() => {
+    next({ name: 'NetworkError' })
+  // }).finally(() => {
+  //   NProgress.done()
+  })
+})
 </script>
 
 <style scoped>
