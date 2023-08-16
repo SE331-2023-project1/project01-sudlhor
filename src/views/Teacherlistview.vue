@@ -26,6 +26,8 @@ import TeacherCard from "@/components/TeacherCard.vue";
 import { ref, computed } from "vue";
 import { useTeacherAllStore } from "@/stores/all_teacher";
 import { storeToRefs } from "pinia";
+import { useMessageStore} from '@/stores/message'
+const store = useMessageStore()
 
 const teacherStoreAll = useTeacherAllStore();
 const { teacher_all} = storeToRefs(
@@ -57,12 +59,18 @@ const addTeacher = () => {
       teacher_email: '',
       teacher_phone: ''
     };
+    
+    store.updateMessage('New Teacher has been added')
+    setTimeout(() => {
+      store.resetMessage()
+    }, 2000)
     teacherStoreAll.pushNewTeacher(newTeacher);
     newTeacherName.value = "";
     newTeacherSurname.value = "";
     newTaacherImage.value = "";
   }
 };
+
 
 </script>
 
@@ -110,7 +118,7 @@ img {
 input{
   padding: 10px;
   border-radius: 10px;
-  margin-right: 10px;
+  margin-left: 50px;
 }
 button {
   background-color: #4679d1;
@@ -122,6 +130,7 @@ button {
   display: inline-block;
   font-size: 13px;
   border-radius: 10px;
+  margin-left: 20px;
 }
 </style>
 

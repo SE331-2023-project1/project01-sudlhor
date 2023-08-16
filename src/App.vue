@@ -8,6 +8,10 @@ import TeacherServices from "@/services/Teacherservice";
 import { useTeacherAllStore } from "@/stores/all_teacher";
 import StudentService from '@/services/StudentInfoServices'
 import { useStudentAllStore } from '@/stores/all_student'
+import { useMessageStore } from './stores/message';
+import { storeToRefs } from 'pinia';
+const store = useMessageStore()
+const { message } = storeToRefs(store)
 const studentStore_all = useStudentAllStore();
 const teacherStoreAll = useTeacherAllStore();
 
@@ -33,12 +37,16 @@ onMounted(async () => {
 
 <template>
   <header>
+    <div>
+    <div id="flashMessage" v-if="message">
+      <h4> {{ message }} </h4>
+    </div>
       <HelloWorld msg="SoodLor School" />
       <nav class="fixed-nav animate__animated animate__bounceInLeft">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/teacherlist">TeacherList</RouterLink>
       </nav>
-  
+    </div>
   </header>
 <br><br><br>
   <RouterView />
@@ -120,6 +128,20 @@ nav a:first-of-type {
   border: 0;
 }
 
+@keyframes yellowfade {
+  from {
+    background: blue;
+  }
+  to {
+    background: transparent;
+  }
+}
+
+#flashMessage {
+  margin-top: 25%;
+  animation: yellowfade 5s ease-in-out;
+}
+
 @media (min-width: 1920px) {
 
 
@@ -151,5 +173,22 @@ nav a:first-of-type {
   }
 }
 
+@keyframes yellowfade {
+  from {
+    background: rgb(213, 239, 80);
 
+  }
+  to {
+    background: transparent;
+  }
+}
+
+#flashMessage {
+  animation: yellowfade 3s ease-in-out;
+}
+
+h4{
+  font-size: large;
+  color: antiquewhite;
+}
 </style>

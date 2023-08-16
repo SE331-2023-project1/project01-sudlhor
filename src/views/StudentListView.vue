@@ -59,6 +59,8 @@ import { onBeforeRouteLeave } from 'vue-router'
 import 'animate.css';
 import { useStudentAllStore } from '@/stores/all_student'
 import { storeToRefs } from 'pinia';
+import { useMessageStore} from '@/stores/message'
+const store = useMessageStore()
 const studentStore_all = useStudentAllStore();
 const { student_all } = storeToRefs(studentStore_all);
 const students: Ref<studentInfo[]> = ref([])
@@ -100,6 +102,10 @@ const addStudent = () => {
     // comment: Comment[]
     // student_id: number
     };
+    store.updateMessage('New student has been added')
+    setTimeout(() => {
+      store.resetMessage()
+    }, 2000)
 
     studentStore_all.pushNewStudent(newStudent);
 
